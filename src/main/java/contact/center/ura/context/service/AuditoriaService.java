@@ -1,2 +1,7 @@
-package contact.center.ura.context.service;public class AuditoriaService {
+package contact.center.ura.context.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class AuditoriaService {
 }
