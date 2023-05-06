@@ -1,16 +1,31 @@
 package contact.center.ura.context.model;
 
+import contact.center.ura.context.entity.Contexto;
 import lombok.Data;
-import java.util.Date;
+
+import java.time.LocalDateTime;
 
 @Data
 public class ContextoDTO {
-    private Integer id;
+    private Long id;
     private String nome;
-    private Date dataHoraInicio;
-    private Date dataHoraFim;
+    private LocalDateTime dataHoraInicio;
+    private LocalDateTime dataHoraFim;
     private String usuario;
-    private String versao;
+    private Integer versao;
     private boolean flowAtivo;
-    private Date dataHoraModificacao;
+    private LocalDateTime dataHoraModificacao;
+
+    public ContextoDTO() {}
+
+    public ContextoDTO(Contexto contexto) {
+        this.id = contexto.getId();
+        this.nome = contexto.getNome();
+        this.dataHoraInicio = contexto.getDataHoraInicio();
+        this.dataHoraFim = contexto.getDataHoraFim();
+        this.usuario = contexto.getUsuario();
+        this.versao = contexto.getVersao();
+        this.flowAtivo = contexto.isFlowAtivo();
+        this.dataHoraModificacao = contexto.getDataHoraModificacao();
+    }
 }

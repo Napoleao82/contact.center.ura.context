@@ -1,29 +1,45 @@
 package contact.center.ura.context.service;
 
 import contact.center.ura.context.entity.Contexto;
+import contact.center.ura.context.model.ContextoDTO;
 import contact.center.ura.context.repository.ContextoRepository;
-import javafx.util.converter.LocalDateStringConverter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ContextoService {
+
     @Autowired
     private ContextoRepository contextoRepository;
 
+    public Contexto salvarContexto(ContextoDTO contextoDTO) {
+        Contexto contexto = new Contexto();
+        contexto.setNome(contextoDTO.getNome());
+        contexto.setDataHoraInicio(contextoDTO.getDataHoraInicio());
+        contexto.setDataHoraFim(contextoDTO.getDataHoraFim());
+        contexto.setUsuario(contextoDTO.getUsuario());
+        contexto.setVersao(contextoDTO.getVersao());
+        contexto.setFlowAtivo(contextoDTO.isFlowAtivo());
+        contexto.setDataHoraModificacao(contextoDTO.getDataHoraModificacao());
+
+        return contextoRepository.save(contexto);
+    }
+
     public List<Contexto> findAll() {
-        List<Contexto> listaContexto = new ArrayList<Contexto>();
-        Contexto c1 = new Contexto(1, "teste", "2023-05-03", "2023-05-30", "Pedro", 1, true, "2023-05-03");
-        listaContexto.add(c1);
-        return listaContexto;
+        List<Contexto> contextos = contextoRepository.findAll();
+        if(contextos.isEmpty()){
+            System.out.println("Não existem dados na tabela");
+        }
+        return contextos;
     }
 
-    public void inserir(Contexto contexto){
-        System.out.println("Inserido: " + contexto);
+    public void alterar(Contexto contexto){
+        System.out.println("Alterado: " + contexto);
     }
 
+    public void excluir(Long id){
+        System.out.println("Excluído: " + id);
+    }
 }

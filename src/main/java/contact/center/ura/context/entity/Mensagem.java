@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity(name = "mensagem")
 @Table(name = "MENSAGEM")
@@ -41,10 +42,10 @@ public class Mensagem implements Serializable {
     private Integer prioridade;
 
     @Column(name = "DATA_HORA_INICIO")
-    private String dataHoraInicio;
+    private LocalDateTime dataHoraInicio;
 
     @Column(name = "DATA_HORA_FIM")
-    private String dataHoraFim;
+    private LocalDateTime dataHoraFim;
 
     public Mensagem() {
 

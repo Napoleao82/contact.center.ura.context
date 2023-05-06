@@ -1,12 +1,13 @@
 package contact.center.ura.context.model;
 
 import lombok.Data;
-import java.util.Date;
+
+import java.time.LocalDateTime;
 
 @Data
 public class AuditoriaDTO {
     private Integer id;
     private String usuario;
     private String alteracao;
-    private Date dataHoraModificacao;
+    private LocalDateTime dataHoraModificacao;
 }

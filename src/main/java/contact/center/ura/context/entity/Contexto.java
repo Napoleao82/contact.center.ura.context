@@ -20,16 +20,16 @@ public class Contexto implements Serializable {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "NOME")
     private String nome;
 
     @Column(name = "DATA_HORA_INICIO")
-    private String dataHoraInicio;
+    private LocalDateTime dataHoraInicio;
 
     @Column(name = "DATA_HORA_FIM")
-    private String dataHoraFim;
+    private LocalDateTime dataHoraFim;
 
     @Column(name = "USUARIO")
     private String usuario;
@@ -41,7 +41,7 @@ public class Contexto implements Serializable {
     private boolean flowAtivo;
 
     @Column(name = "DATA_HORA_MODIFICACAO")
-    private String dataHoraModificacao;
+    private LocalDateTime dataHoraModificacao;
 
     public Contexto() {
 

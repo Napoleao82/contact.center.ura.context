@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Repository
@@ -12,7 +13,7 @@ import java.util.Date;
 public interface AuditoriaRepository  extends JpaRepository<Auditoria, Integer> {
     Auditoria save(Auditoria auditoria);
 
-    default Auditoria criarAuditoria(Integer id, String usuario, String alteracao, String data){
+    default Auditoria criarAuditoria(Integer id, String usuario, String alteracao, LocalDateTime data){
         Auditoria auditoria = new Auditoria();
         auditoria.setId(id);
         auditoria.setUsuario(usuario);

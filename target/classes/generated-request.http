@@ -1,4 +1,15 @@
 ###
+GET http://localhost:8080/cda/auditoria
+###
 GET http://localhost:8080/cda/contexto
+###
+POST http://localhost:8080/cda/contexto
+###
+GET http://localhost:8080/cda/mensagem
+###
+GET http://localhost:8080/cda/menu
+###
+GET http://localhost:8080/cda/opcao
+
 
 <> 2023-04-27T233701.200.txt

@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity(name = "auditoria")
 @Table(name = "AUDITORIA")
@@ -25,7 +26,7 @@ public class Auditoria implements Serializable {
     private String alteracao;
 
     @Column(name = "DATA")
-    private String data;
+    private LocalDateTime data;
 
     public Auditoria() {
 

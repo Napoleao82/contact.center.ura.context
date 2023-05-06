@@ -5,7 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 @Repository
 @Transactional
@@ -15,7 +16,7 @@ public interface MensagemRepository extends JpaRepository<Mensagem, Integer> {
     default Mensagem criarMensagem(Integer id, Integer idContexto, Integer tipo,
                                    Integer formato, String tts, String arquivoAudio,
                                    Integer proximoPasso, Integer prioridade,
-                                   String dataHoraInicio, String dataHoraFim){
+                                   LocalDateTime dataHoraInicio, LocalDateTime dataHoraFim){
         Mensagem mensagem = new Mensagem();
         mensagem.setId(id);
         mensagem.setIdContexto(idContexto);
