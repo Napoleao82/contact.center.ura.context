@@ -2,19 +2,14 @@ package contact.center.ura.context.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-
-@Entity(name = "contexto")
-@Table(name = "CONTEXTO")
+@Entity
+@Table(name = "contexto")
 @Data
 @AllArgsConstructor
-@IdClass(Contexto.class)
 public class Contexto implements Serializable {
 
     @Id
@@ -22,25 +17,25 @@ public class Contexto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "NOME")
+    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "DATA_HORA_INICIO")
+    @Column(name = "data_hora_inicio")
     private LocalDateTime dataHoraInicio;
 
-    @Column(name = "DATA_HORA_FIM")
+    @Column(name = "data_hora_fim")
     private LocalDateTime dataHoraFim;
 
-    @Column(name = "USUARIO")
+    @Column(name = "usuario")
     private String usuario;
 
-    @Column(name = "VERSAO")
+    @Column(name = "versao")
     private Integer versao;
 
-    @Column(name = "FLOW_ATIVO")
+    @Column(name = "flow_ativo")
     private boolean flowAtivo;
 
-    @Column(name = "DATA_HORA_MODIFICACAO")
+    @Column(name = "data_hora_modificacao")
     private LocalDateTime dataHoraModificacao;
 
     public Contexto() {

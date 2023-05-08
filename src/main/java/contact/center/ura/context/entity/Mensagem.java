@@ -2,16 +2,14 @@ package contact.center.ura.context.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Entity(name = "mensagem")
+@Entity
 @Table(name = "MENSAGEM")
 @Data
 @AllArgsConstructor
-@IdClass(Mensagem.class)
 public class Mensagem implements Serializable {
 
     @Id
@@ -19,7 +17,6 @@ public class Mensagem implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Id
     @Column(name = "ID_CONTEXTO")
     private Integer idContexto;
 

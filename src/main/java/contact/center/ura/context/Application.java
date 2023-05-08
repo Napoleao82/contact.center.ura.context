@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@EnableJpaRepositories(basePackages = {"contact.center.ura.context.repository", "contact.center.ura.context.entity"})
+@EnableJpaRepositories(basePackages = {"contact.center.ura.context.repository", "contact.center.ura.context.entity", "contact.center.ura.context.service"})
 @SpringBootApplication
 public class Application {
 

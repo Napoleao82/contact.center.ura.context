@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 @Table(name = "AUDITORIA")
 @Data
 @AllArgsConstructor
-@IdClass(Auditoria.class)
 public class Auditoria implements Serializable {
 
     @Id
@@ -26,7 +25,7 @@ public class Auditoria implements Serializable {
     private String alteracao;
 
     @Column(name = "DATA")
-    private LocalDateTime data;
+    private LocalDateTime dataHoraModificacao;
 
     public Auditoria() {
 

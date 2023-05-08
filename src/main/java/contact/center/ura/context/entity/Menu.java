@@ -5,11 +5,10 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "menu")
+@Entity
 @Table(name = "MENU")
 @Data
 @AllArgsConstructor
-@IdClass(Menu.class)
 public class Menu implements Serializable {
 
     @Id
@@ -20,7 +19,6 @@ public class Menu implements Serializable {
     @Column(name = "NOME")
     private String nome;
 
-    @Id
     @Column(name = "ID_CONTEXTO")
     private Integer idContexto;
 

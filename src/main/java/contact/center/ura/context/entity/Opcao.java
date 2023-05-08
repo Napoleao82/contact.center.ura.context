@@ -5,11 +5,10 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "opcao")
+@Entity
 @Table(name = "OPCAO")
 @Data
 @AllArgsConstructor
-@IdClass(Opcao.class)
 public class Opcao implements Serializable {
 
     @Id
@@ -17,7 +16,6 @@ public class Opcao implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Id
     @Column(name = "ID_MENSAGEM")
     private Integer idMensagem;
 

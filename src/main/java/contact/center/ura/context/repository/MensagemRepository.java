@@ -4,31 +4,16 @@ import contact.center.ura.context.entity.Mensagem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDateTime;
-
+import java.util.List;
+import java.util.Optional;
 
 @Repository
 @Transactional
-public interface MensagemRepository extends JpaRepository<Mensagem, Integer> {
+public interface MensagemRepository extends JpaRepository<Mensagem, Integer>{
+
+    List<Mensagem> findAll();
+    
     Mensagem save(Mensagem mensagem);
 
-    default Mensagem criarMensagem(Integer id, Integer idContexto, Integer tipo,
-                                   Integer formato, String tts, String arquivoAudio,
-                                   Integer proximoPasso, Integer prioridade,
-                                   LocalDateTime dataHoraInicio, LocalDateTime dataHoraFim){
-        Mensagem mensagem = new Mensagem();
-        mensagem.setId(id);
-        mensagem.setIdContexto(idContexto);
-        mensagem.setTipo(tipo);
-        mensagem.setFormato(formato);
-        mensagem.setTts(tts);
-        mensagem.setArquivoAudio(arquivoAudio);
-        mensagem.setProximoPasso(proximoPasso);
-        mensagem.setPrioridade(prioridade);
-        mensagem.setDataHoraInicio(dataHoraInicio);
-        mensagem.setDataHoraFim(dataHoraFim);
-
-        return save(mensagem);
-    }
+    Optional<Mensagem> findById(Integer id);
 }
