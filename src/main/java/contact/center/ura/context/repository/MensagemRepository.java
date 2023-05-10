@@ -1,19 +1,19 @@
 package contact.center.ura.context.repository;
 
-import contact.center.ura.context.entity.Contexto;
+import contact.center.ura.context.entity.Mensagem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
-
+import java.util.Optional;
 
 @Repository
 @Transactional
-public interface ContextoRepository extends JpaRepository<Contexto, Long> {
-    Contexto findByNome(String nome);
+public interface MensagemRepository extends JpaRepository<Mensagem, Integer>{
 
-    Contexto save(Contexto contexto);
+    List<Mensagem> findAll();
+    
+    Mensagem save(Mensagem mensagem);
 
-    List<Contexto> findAll();
-
+    Optional<Mensagem> findById(Integer id);
 }

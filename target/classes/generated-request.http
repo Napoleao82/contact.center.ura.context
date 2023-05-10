@@ -1,4 +1,64 @@
 ###
+GET http://localhost:8080/cda/auditoria
+### read contexto
 GET http://localhost:8080/cda/contexto
+###
+GET http://localhost:8080/cda/mensagem
+###
+GET http://localhost:8080/cda/menu
+###
+GET http://localhost:8080/cda/opcao
+###
+POST http://localhost:8080/cda/auditoria
+### create contexto
+POST http://localhost:8080/cda/contexto
+Content-Type: application/json
+
+{
+  "nome": "contexto 1",
+  "dataHoraInicio": "2023-05-07T14:00:00",
+  "dataHoraFim": "2024-05-07T15:00:00",
+  "usuario": "Pedro",
+  "versao": 1,
+  "flowAtivo": true,
+  "dataHoraModificacao": "2023-05-07T14:30:00"
+}
+###
+POST http://localhost:8080/cda/mensagem
+###
+POST http://localhost:8080/cda/menu
+###
+POST http://localhost:8080/cda/opcao
+###
+PUT http://localhost:8080/cda/auditoria
+### update contexto
+PUT http://localhost:8080/cda/contexto?nome={{nome}}
+Content-Type: application/json
+
+{
+  "nome": "novo contexto 1",
+  "dataHoraInicio": "2023-05-07T14:00:00",
+  "dataHoraFim": "2024-05-07T15:00:00",
+  "usuario": "Pedro",
+  "versao": 1,
+  "flowAtivo": true,
+  "dataHoraModificacao": "2023-05-07T14:30:00"
+}
+###
+PUT http://localhost:8080/cda/mensagem
+###
+PUT http://localhost:8080/cda/menu
+###
+PUT http://localhost:8080/cda/opcao
+###
+DELETE http://localhost:8080/cda/auditoria
+### delete contexto
+DELETE http://localhost:8080/cda/contexto?nome={{nome}}
+###
+DELETE http://localhost:8080/cda/mensagem
+###
+DELETE http://localhost:8080/cda/menu
+###
+DELETE http://localhost:8080/cda/opcao
 
 <> 2023-04-27T233701.200.txt
